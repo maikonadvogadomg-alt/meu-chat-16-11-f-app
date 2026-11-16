@@ -1,34 +1,51 @@
 {
   "name": "meuchat1611f",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "description": "Meu-Chat-16-11-F (teste 11162011)",
+  "author": "Maikon",
   "private": true,
-  "description": "Meu-Chat-16-11-F",
-  "author": "Meu-Chat-16-11-F",
   "main": "electron/main.cjs",
-  "scripts": {
-    "desktop": "electron .",
-    "exe": "electron-builder --win portable --publish never"
-  },
+  "portaDoPrograma": 7834,
   "devDependencies": {
-    "electron": "^33.2.0",
-    "electron-builder": "^25.1.8"
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
   },
   "build": {
-    "appId": "com.app.meuchat1611f",
-    "productName": "Meu-Chat-16-11-F",
+    "appId": "com.maikonadvogadomgalt.meuchat1611f.nteste11162011.pc",
+    "productName": "Meu-Chat-16-11-F (teste 11162011)",
+    "executableName": "meu-chat-16-11-f-teste-11162011",
     "directories": {
-      "output": "dist-electron"
+      "output": "release"
     },
+    "asar": false,
     "files": [
       "**/*",
       "!android/**",
       "!.github/**",
-      "!dist-electron/**",
+      "!release/**",
+      "!exe/**",
+      "!node_modules/.cache/**",
       "!*.zip",
-      "!.sk/**"
+      "!.sk/**",
+      "!apk.config.json"
     ],
     "win": {
-      "target": "portable"
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icons/icon-512.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Meu-Chat-16-11-F (teste 11162011)",
+      "artifactName": "meu-chat-16-11-f-teste-11162011-Instalar.exe"
+    },
+    "portable": {
+      "artifactName": "meu-chat-16-11-f-teste-11162011-sem-instalar.exe"
     }
   }
 }
